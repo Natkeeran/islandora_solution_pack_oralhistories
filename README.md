@@ -1,5 +1,7 @@
 # Oral Histories Solution Pack
 
+*This is a prototype for our Oral Histories Project serving as a proof of concept of utilizing emerging HTML5 video, WEBVTT technologies and existing islandora SPs. Now we are moving on to a slightly different architecture on Master Branch*
+
 ## Introduction
 
 Adds all required Fedora objects depending on video or audio file uploaded and TRANSCRIPT datastream through the Islandora interface.
