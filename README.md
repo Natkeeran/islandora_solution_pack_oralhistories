@@ -1,6 +1,6 @@
 # Oral Histories Solution Pack
 
-*This is a prototype for our Oral Histories Project serving as a proof of concept of utilizing emerging HTML5 video, WEBVTT technologies and existing islandora SPs. Now we are moving on to a slightly different architecture on Master Branch*
+*This is a prototype for our Oral Histories Project serving as a proof of concept of utilizing emerging HTML5 video, WEBVTT technologies and existing islandora SPs. Now we are moving on to a slightly different architecture on Master Branch. No changes will be made on this branch.*
 
 ## Introduction
 
