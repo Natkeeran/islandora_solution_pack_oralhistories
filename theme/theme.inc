@@ -170,16 +170,38 @@ function islandora_oralhistories_preprocess_islandora_native_html5(array &$varia
 }
 
 
+function islandora_oralhistories_preprocess_islandora_video(array &$variables) {
+  $params = $variables['params'];
+  $variables['tn'] = $params['tn'];
+  $variables['sources'][] = array('url' => $params['url'], 'mime' => $params['mime']);
+  $variables['tracks'] = $params['tracks'];
+  $variables['enable_caption_display'] = $params['enable_caption_display'];
+}
+
 /**
  * Implements hook_theme_registry_alter().
  */
 function islandora_oralhistories_theme_registry_alter(&$theme_registry) {
   // Override the default islandora-videojs.tpl.php.
+  dpm($theme_registry, 'theme_registry');
   if (isset($theme_registry['islandora_videojs'])) {
     $module_path = drupal_get_path('module', 'islandora_oralhistories');
     $theme_registry['islandora_videojs']['theme path'] = $module_path;
     $theme_registry['islandora_videojs']['template'] = $module_path . '/theme/islandora-videojs';
   }
+
+  if (isset($theme_registry['islandora_video'])) {
+    $module_path = drupal_get_path('module', 'islandora_oralhistories');
+    $theme_registry['islandora_video']['theme path'] = $module_path;
+    $theme_registry['islandora_video']['template'] = $module_path . '/theme/islandora-videojs';
+    $theme_registry['islandora_video']['process functions'][] = 'islandora_oralhistories_process_islandora_videojs';
+//    if ($key = array_search('islandora_video_preprocess_islandora_video', $theme_registry['islandora_video']['preprocess functions'])) {
+//      unset($theme_registry['islandora_video']['preprocess functions'][$key]);
+//      dpm($key, 'key');
+//    }
+  }
+
+  dpm($theme_registry, 'theme_registry after');
 }
 
 /**

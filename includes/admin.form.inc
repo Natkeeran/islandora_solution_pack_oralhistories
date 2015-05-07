@@ -46,6 +46,13 @@ function islandora_oralhistories_admin(array $form, array &$form_state) {
     '#default_value' => variable_get('islandora_oralhistories_enbable_transcript_display', FALSE),
   );
 
+  $form['islandora_oralhistories_add_transcript_video'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Add transcript on islandora:sp_videoCModel'),
+    '#description' => t('Add transcript to islandora:sp_videoCModel.'),
+    '#default_value' => variable_get('islandora_oralhistories_add_transcript_video', FALSE),
+  );
+
   return system_settings_form($form);
 }
 
