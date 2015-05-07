@@ -128,6 +128,7 @@ function islandora_oralhistories_preprocess_islandora_oralhistories(array &$vari
   );
 
   $viewer = islandora_get_viewer($viewer_params, 'islandora_oralhistories_viewers' , $object);
+  dpm($viewer, 'viewer');
   if ($viewer) {
     $variables['islandora_content']['viewer'] = $viewer;
   }
