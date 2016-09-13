@@ -38,6 +38,7 @@ before_install:
 
 
 script:
+  - ant -buildfile sites/all/modules/islandora_solution_pack_oralhistories/build.xml lint
   - drush coder-review --reviews=production,security,style,i18n,potx,sniffer islandora_basic_image
 
 notifications:
