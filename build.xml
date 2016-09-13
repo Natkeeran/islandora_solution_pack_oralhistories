@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project name="islandora_solution_pack_newspaper" default="build">
-    <target name="build" depends="clean,prepare,php-eval,lint,phploc,code_sniff,phpcpd,pdepend,doxygen" />
+    <target name="build" depends="clean,prepare,php-eval,lint,phploc,code_sniff,phpcpd,pdepend,doxygen,phpcb,test,cc-process,cc-export" />
 
     <target name="clean" description="Cleanup build artifacts">
         <delete dir="${basedir}/build/test" />
@@ -23,7 +23,7 @@
 
     <target name="php-eval" description="Use php-eval to set the code_coverage_filter_files variable">
         <exec executable="drush">
-            <arg line="php-eval &quot;variable_set('code_coverage_files', array('sites/all/modules/islandora_solution_pack_oralhistories/islandora_oralhistories.module', 'sites/all/modules/islandora_solution_pack_oralhistories/islandora_oralhistories.install', 'sites/all/modules/islandora_solution_pack_oralhistories/includes/admin.form.inc', 'sites/all/modules/islandora_solution_pack_oralhistories/includes/annotation.inc', 'sites/all/modules/islandora_solution_pack_oralhistories/includes/derivatives.inc', 'sites/all/modules/islandora_solution_pack_oralhistories/includes/oralhistories_upload.form.inc', 'sites/all/modules/islandora_solution_pack_oralhistories/includes/rdf_builder.inc', 'sites/all/modules/islandora_solution_pack_oralhistories/includes/transcript.edit.form.inc', 'sites/all/modules/islandora_solution_pack_oralhistories/includes/utilities.inc', 'sites/all/modules/islandora_solution_pack_oralhistories/theme/theme.inc' )); variable_set('code_coverage_modules', array());&quot;"/>
+            <arg line="php-eval &quot;variable_set('code_coverage_files', array('sites/all/modules/islandora_solution_pack_oralhistories/islandora_oralhistories.module', 'sites/all/modules/islandora_solution_pack_oralhistories/islandora_oralhistories.install', 'sites/all/modules/islandora_solution_pack_oralhistories/includes/admin.form.inc', 'sites/all/modules/islandora_solution_pack_oralhistories/includes/annotation.inc', 'sites/all/modules/islandora_solution_pack_oralhistories/includes/derivatives.inc', 'sites/all/modules/islandora_solution_pack_oralhistories/includes/oralhistories_upload.form.inc', 'sites/all/modules/islandora_solution_pack_oralhistories/includes/rdf_builder.inc', 'sites/all/modules/islandora_solution_pack_oralhistories/includes/transcript.edit.form.inc', 'sites/all/modules/islandora_solution_pack_oralhistories/includes/utilities.inc', 'sites/all/modules/islandora_solution_pack_oralhistories/theme/theme.inc', 'sites/all/modules/islandora_solution_pack_oralhistories/theme/islandora-html5-video-side.tpl.php', 'sites/all/modules/islandora_solution_pack_oralhistories/theme/islandora-html5-video-stack.tpl.php', 'sites/all/modules/islandora_solution_pack_oralhistories/theme/islandora-native-html5.tpl.php', 'sites/all/modules/islandora_solution_pack_oralhistories/theme/islandora-oralhistories.tpl.php', 'sites/all/modules/islandora_solution_pack_oralhistories/theme/islandora-transcript-scroller.tpl.php', 'sites/all/modules/islandora_solution_pack_oralhistories/theme/islandora-videojs.tpl.php')); variable_set('code_coverage_modules', array());&quot;"/>
         </exec>
     </target>
 
