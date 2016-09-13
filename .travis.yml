@@ -1,7 +1,17 @@
 language: php
 php:
-  - 5.5
+  - 5.3.3
   - 5.4
-  - hhvm
+  - 5.5
+
+branches:
+  only:
+    - /^7.x/
+env:
+  - FEDORA_VERSION="3.5"
+  - FEDORA_VERSION="3.6.2"
+  - FEDORA_VERSION="3.7.0"
+  - FEDORA_VERSION="3.8.1"
+
 script: phpunit Test.php
 
