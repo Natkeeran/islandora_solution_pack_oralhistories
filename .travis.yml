@@ -30,6 +30,7 @@ before_install:
   - cd $HOME/drupal-*
 
   - ln -s $TRAVIS_BUILD_DIR sites/all/modules/islandora_solution_pack_oralhistories
+  - ln -s $TRAVIS_BUILD_DIR2 sites/all/modules/islandora_solution_pack_video
   - ln -s $HOME/islandora_solution_pack_collection sites/all/modules/islandora_solution_pack_collection
   - ln -s $HOME/islandora_solution_pack_video sites/all/modules/islandora_solution_pack_video
   - ln -s $HOME/islandora_solution_pack_audio sites/all/modules/islandora_solution_pack_audio
@@ -37,7 +38,7 @@ before_install:
   - ln -s $HOME/transcripts_ui sites/all/modules/transcripts_ui
   - ln -s $HOME/ctools sites/all/modules/ctools
 
-  - sudo sh $HOME/drupal/sites/all/modules/islandora_solution_pack_video/tests/scripts/ffmpeg-install.sh
+  - sudo sh $TRAVIS_BUILD_DIR2/tests/scripts/ffmpeg-install.sh
 
   - drush en --user=1 --yes islandora_basic_collection
   - drush en --user=1 --yes islandora_video
