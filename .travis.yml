@@ -5,7 +5,7 @@ php:
 
 branches:
   only:
-    - master
+    - /^7.x/
 
 env:
   - FEDORA_VERSION="3.8.1
@@ -36,7 +36,6 @@ before_install:
 
   - drush en --user=1 --yes islandora_basic_collection
   - drush en --user=1 --yes islandora_video
-  - drush en --user=1 --yes islandora_audio
   - drush en --user=1 --yes islandora_audio
   - drush en --user=1 --yes islandora_solr
   - drush en --user=1 --yes transcripts_ui
