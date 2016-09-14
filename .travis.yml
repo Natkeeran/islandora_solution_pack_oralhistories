@@ -33,7 +33,7 @@ before_install:
   - ln -s $HOME/transcripts_ui sites/all/modules/transcripts_ui
   - ln -s $HOME/ctools sites/all/modules/ctools
 
-  - sudo sh $HOME/islandora_solution_pack_video/tests/scripts/ffmpeg-install.sh
+  - sudo $HOME/islandora_solution_pack_video/tests/scripts/ffmpeg-install.sh
 
   - drush en --user=1 --yes islandora_basic_collection
   - drush en --user=1 --yes islandora_video
