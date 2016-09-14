@@ -9,7 +9,7 @@ php:
 
 branches:
   only:
-    - master
+    - /^7.x/
 
 env:
   - FEDORA_VERSION="3.5"
