@@ -8,7 +8,7 @@ branches:
     - master
 
 env:
-  - FEDORA_VERSION="3.8.1
+  - FEDORA_VERSION="3.8.1"
 
 before_install:
   - cd $HOME
