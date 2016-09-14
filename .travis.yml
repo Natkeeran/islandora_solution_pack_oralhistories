@@ -1,8 +1,6 @@
 sudo: true
 language: php
 php:
-  - 5.3.3
-  - 5.4
   - 5.5
 
 branches:
@@ -10,9 +8,6 @@ branches:
     - master
 
 env:
-  - FEDORA_VERSION="3.5"
-  - FEDORA_VERSION="3.6.2"
-  - FEDORA_VERSION="3.7.0"
   - FEDORA_VERSION="3.8.1
 
 before_install:
@@ -38,7 +33,7 @@ before_install:
   - ln -s $HOME/transcripts_ui sites/all/modules/transcripts_ui
   - ln -s $HOME/ctools sites/all/modules/ctools
 
-  - sudo sh $TRAVIS_BUILD_DIR2/tests/scripts/ffmpeg-install.sh
+  - sudo sh $HOME/islandora_solution_pack_video/tests/scripts/ffmpeg-install.sh
 
   - drush en --user=1 --yes islandora_basic_collection
   - drush en --user=1 --yes islandora_video
