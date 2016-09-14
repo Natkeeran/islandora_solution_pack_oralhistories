@@ -1,6 +1,10 @@
 sudo: true
+
 language: php
+
 php:
+  - 5.3.3
+  - 5.4
   - 5.5
 
 branches:
@@ -8,6 +12,9 @@ branches:
     - master
 
 env:
+  - FEDORA_VERSION="3.5"
+  - FEDORA_VERSION="3.6.2"
+  - FEDORA_VERSION="3.7.0"
   - FEDORA_VERSION="3.8.1"
 
 before_install:
